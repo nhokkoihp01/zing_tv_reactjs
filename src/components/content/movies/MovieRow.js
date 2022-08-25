@@ -197,6 +197,11 @@ const MovieRowContent = styled.div`
     top: 50%;
     left: -40px;
     transform: translateY(-50%);
+    @media only screen and (max-width: 768px) {
+      display: none;
+
+    }
+    
 
     &:hover {
       color: var(--primary-color);
@@ -219,8 +224,11 @@ const MovieRowContent = styled.div`
     padding: 6px 8px;
     top: 50%;
     right: -40px;
-
     transform: translateY(-50%);
+    @media only screen and (max-width: 768px) {
+      display: none;
+
+    }
 
     &:hover {
       color: var(--primary-color);
