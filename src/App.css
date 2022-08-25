@@ -1,0 +1,50 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --primary-color: #7ebd03;
+  --while-color: #fff;
+  --navbar-background:#1C1C1C;
+  --background-color:#F2F2F2;
+  --navbar-height:60px;
+  --top-navbar:42px;
+  --max-width:1200px;
+  --text-color:rgba(0,0,0,0.9);
+  --navbar-menu-height:32px;
+  --navbar-background-menu:#F7F7F7;
+
+
+}
+a{
+  text-decoration: none;
+  color: inherit;
+}
+h1,h2,h3,h4,h5,h6{
+  margin-bottom: 0;
+}
+li{
+  list-style: none;
+}
+body {
+  color: #3e4d5c;
+  font-family: 'Roboto', sans-serif;
+
+
+}
+.App{
+  background-color: #F2F2F2;
+}
+
+html {
+  font-size: 62.5%;
+  line-height: 1.6rem;
+
+}
+.animate__animated.animate__fadeInLeft {
+  animation-duration: 0.8s !important;
+}
+/*.hide-navbar{*/
+/*  display: none;*/
+/*}*/
