@@ -1,6 +1,7 @@
 import React, {useEffect, useRef, useState} from 'react';
 import styled from "styled-components";
 import Slider from "react-slick";
+import Movie1 from '../../../assets/images/movies/move1.jpg'
 import {MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight} from 'react-icons/md'
 import {Link} from "react-router-dom";
 import {Skeleton} from "antd";
@@ -39,13 +40,23 @@ function MoviesTwoRow(props) {
 
                 }
             },
+            {
+                breakpoint: 992,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 2,
+                    className: "center"
+
+                }
+            },
 
             {
                 breakpoint: 768,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 3,
                     slidesPerRow: 2,
+                    className: "center"
 
                 }
             },
@@ -54,7 +65,7 @@ function MoviesTwoRow(props) {
                 settings: {
                     slidesToShow: 1,
                     slidesToScroll: 3,
-                    rows: 1,
+                    rows: 2,
 
                 }
             },
@@ -139,19 +150,26 @@ const MovieItem = styled.div`
   scale: 1;
   transition: 0.3s all linear;
 
+
   &:hover {
     scale: 1.1;
+  }
+  @media only screen and (max-width: 992px) {
+    max-width: 300px;
+    //margin-left: 50px;
+
   }
 
   @media only screen and (max-width: 768px) {
     max-width: 250px;
-    margin-left: 50px;
+    //margin-left: 50px;
+   
   }
   @media only screen and (max-width: 620px) {
     max-width: 350px;
     width: 100%;
     height: 100%;
-    margin-left: 0;
+    margin-left: 0 ;
 
   }
 

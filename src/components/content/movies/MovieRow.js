@@ -13,11 +13,11 @@ function MovieRow(props) {
     const {title, movies} = props;
     let settings = {
         dots: false,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 5,
         slidesToScroll: 2,
-        initialSlide: 0,
+        initialSlide: 1,
         responsive: [
             {
                 breakpoint: 1024,
@@ -32,7 +32,7 @@ function MovieRow(props) {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 2,
-                    initialSlide: 2
+
                 }
             },
             {
@@ -120,6 +120,10 @@ const MovieItem = styled.div`
   cursor: pointer;
   scale: 1;
   transition: 0.3s all linear;
+  @media only screen and (max-width: 414px) {
+    max-width: 400px;
+
+  }
 
   &:hover {
     scale: 1.1;
