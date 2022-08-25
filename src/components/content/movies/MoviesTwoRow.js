@@ -248,6 +248,10 @@ const MoviesTwoRowContent = styled.div`
     left: -40px;
 
     transform: translateY(-50%);
+    @media only screen and (max-width: 768px) {
+      display: none;
+
+    }
 
     &:hover {
       color: var(--primary-color);
@@ -270,8 +274,11 @@ const MoviesTwoRowContent = styled.div`
     padding: 6px 8px;
     top: 50%;
     right: -40px;
-
     transform: translateY(-50%);
+    @media only screen and (max-width: 768px) {
+      display: none;
+
+    }
 
     &:hover {
       color: var(--primary-color);
