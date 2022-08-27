@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import styled from "styled-components";
-import Profile from "./Profile";
 import {Link, useNavigate} from "react-router-dom";
 import User from "../../assets/images/users/default-user-image.png";
 import {RiArrowDownSFill} from "react-icons/ri";
@@ -15,7 +14,7 @@ function NavbarInfoUser(props) {
     }
     const handleLogin = () => {
         setLogin(true);
-        goLoginPage();
+
     }
     const goHome = () =>{
         navigate('/')
@@ -31,7 +30,8 @@ function NavbarInfoUser(props) {
             {
                 !login && (
                     <li className="login-link"
-                        onClick={handleLogin}>
+                        onClick={handleLogin}
+                        >
                         <span>  Đăng nhập </span>
                     </li>
 
@@ -94,11 +94,13 @@ const InformationUser = styled.div`
     width: 100%;
     height: 100%;
     justify-content: right;
+    cusor:pointer;
 
     span {
       color: var(--while-color);
       font-weight: bold;
       padding: 4px 6px;
+      cursor:pointer;
 
       :hover {
         text-decoration: underline;
