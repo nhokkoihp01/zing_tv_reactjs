@@ -1,50 +1,79 @@
-import React from 'react';
+import React, {useState} from 'react';
+import styled from "styled-components";
+import Profile from "./Profile";
+import {Link, useNavigate} from "react-router-dom";
 import User from "../../assets/images/users/default-user-image.png";
 import {RiArrowDownSFill} from "react-icons/ri";
 import {BiUserCircle} from "react-icons/bi";
 import {ImExit} from "react-icons/im";
-import styled from "styled-components";
 
 function NavbarInfoUser(props) {
+    const [login, setLogin] = useState(false);
+    const navigate = useNavigate();
+    const goLoginPage = () => {
+        navigate('/login/')
+    }
+    const handleLogin = () => {
+        setLogin(true);
+        goLoginPage();
+    }
+    const goHome = () =>{
+        navigate('/')
+        setLogin(false);
+
+    }
+
+
     return (
         <InformationUser>
-            {/*BEGIN LOGIN*/}
-            {/*<li className="login-link">*/}
-            {/*    <a href="">Đăng nhập</a>*/}
-            {/*</li>*/}
-            {/*END LOGIN*/}
-            <div className="box__info-user">
+
+
+            {
+                !login && (
+                    <li className="login-link"
+                        onClick={handleLogin}>
+                        <span>  Đăng nhập </span>
+                    </li>
+
+                )
+            }
+            {
+                login && (
+                    <div className="box__info-user">
                         <span className="box__info-avatar">
                             <img src={User} alt=""/>
                         </span>
-                <div className="box-profile">
-                    <a className="single" href="">Cá nhân</a>
-                    <RiArrowDownSFill/>
-                    <div className="dropdown__user">
-                        <div className="dropdown__user-content">
+                        <div className="box-profile">
+                            <a className="single" href="">Cá nhân</a>
+                            <RiArrowDownSFill/>
+                            <div className="dropdown__user">
+                                <div className="dropdown__user-content">
                                 <span className="dropdown__user-avatar">
                                     <img src={User} alt=""/>
                                 </span>
-                            <div className="dropdown__user-info">
-                                <li className="dropdown__info-item">
-                                    <BiUserCircle className="dropdown__info-icon"/>
-                                    <a href="">Trang cá nhân</a>
-                                </li>
-                                <li className="dropdown__info-item">
-                                    <ImExit className="dropdown__info-icon"/>
-                                    <a href="">Thoát</a>
-                                </li>
+                                    <div className="dropdown__user-info">
+                                        <li className="dropdown__info-item">
+                                            <BiUserCircle className="dropdown__info-icon"/>
+                                            <a href="">Trang cá nhân</a>
+                                        </li>
+                                        <li className="dropdown__info-item">
+                                            <ImExit className="dropdown__info-icon"/>
+                                            <a onClick={goHome} >Thoát</a>
+                                        </li>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </div>
 
-            </div>
+                    </div>
+                )
+            }
 
 
         </InformationUser>
     );
 }
+
 const InformationUser = styled.div`
   display: flex;
   align-items: center;
@@ -59,8 +88,14 @@ const InformationUser = styled.div`
   .login-link {
     list-style: none;
     margin-left: 0;
+    display: flex;
+    align-items: center;
+    //padding: 4px 8px;
+    width: 100%;
+    height: 100%;
+    justify-content: right;
 
-    a {
+    span {
       color: var(--while-color);
       font-weight: bold;
       padding: 4px 6px;
@@ -136,7 +171,7 @@ const InformationUser = styled.div`
       background-color: var(--while-color);
       display: none;
       z-index: 1;
-      
+
 
       &::after {
         content: "";

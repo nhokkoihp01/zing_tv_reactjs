@@ -4,6 +4,7 @@ import Home from "./components/page/Home";
 import {Routes, Route, BrowserRouter} from "react-router-dom";
 import DetailContent from "./components/content/detail_movie/DetailContent";
 import Search from "./components/page/Search";
+import LoginPage from "./components/page/LoginPage";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
                     <Route exact path='/' element={<Home/>}/>
                     <Route  path='/movie/:movieName' element={<DetailContent/>}/>
                     <Route  path='/search/' element={<Search/>}/>
+                    <Route  path='/login/' element={<LoginPage/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
